@@ -31,11 +31,7 @@ class ViewController: UIViewController {
         setupStackView()
         addLabel()
         stackViewBottomConstraint = self.stackView.bottomAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: (self.headerView.frame.size.height - 80))
-//        layerBottomConstraint = snacksLabel.bottomAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: -16)
-        
         stackView.isHidden = true
-        
-        
         
     }//load
     
@@ -63,16 +59,13 @@ class ViewController: UIViewController {
             self.stackViewBottomConstraint.isActive = true
             self.tableView.frame.origin.y = size
             self.layerBottomConstraint.isActive = false
-//            self.layerBottomConstraint = self.snacksLabel.bottomAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: -20)
-            
+
             if size == 200 {
             self.layerBottomConstraint = self.snacksLabel.bottomAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: 60)
                 
             } else {
             self.layerBottomConstraint = self.snacksLabel.bottomAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: (size - 80))
-                
             }
-            
             
             self.layerBottomConstraint.isActive = true
             self.view.layoutIfNeeded()
@@ -159,11 +152,6 @@ class ViewController: UIViewController {
         self.layerBottomConstraint.isActive = true
         snacksLabel.translatesAutoresizingMaskIntoConstraints = false
         snacksLabel.centerXAnchor.constraint(equalTo: self.headerView.centerXAnchor).isActive = true
-        
-        
-        
-        
-        
     }
     
     
@@ -180,4 +168,8 @@ extension ViewController:UITableViewDataSource {
         return cell
     }
 }
+
+
+
+
 
